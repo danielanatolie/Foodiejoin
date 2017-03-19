@@ -10,14 +10,22 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private User user;
-    private double userLat;
-    private double userLon;
+    private double userLat=0;
+    private double userLon=0;
     private LatLng[] eventLocations;
+    ArrayList<Event> events = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +55,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return null;
     }
 
+
+    public void loadEvents(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("events");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                events.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    events.add(postSnapshot.getValue(Event.class));
+                }
+                System.out.println("event " + events.get(0).description);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                System.out.println("not read");
+
+            }
+        });
+    }
     // Draws markers on the MapActivity using the LatLon values from eventLocations[]
     public void drawEventLocationMarkers(){
-        eventLocations = retrieveEventLocationsFromFirebase();
+        loadEvents();
 
-        for(LatLng latlng: eventLocations){
-            mMap.addMarker(new MarkerOptions().position(latlng));
+        for(Event event: events){
+            LatLng latLng = new LatLng(event.lat,event.lng);
+            mMap.addMarker(new MarkerOptions().position(latLng));
         }
     }
 

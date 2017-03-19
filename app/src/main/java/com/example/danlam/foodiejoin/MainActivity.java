@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Event test = new Event("12 main", "great food", 2017, 4,20,4,20);
+        Event test = new Event("12 main", "great food", 2017, 4,20,4,20, 0,0);
         Map<String, Event> events = new HashMap<String, Event>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference eventsRef = database.getReference("events");
