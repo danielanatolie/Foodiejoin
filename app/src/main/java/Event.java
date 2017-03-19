@@ -14,10 +14,17 @@ public class Event{
     List<User> users = new LinkedList<>();
     Calendar time;
 
-    public Event(Restaurant restaurant, String address, String description, Calendar time){
+    public Event(Restaurant restaurant, String address, String description, int year, int month, int date, int hour, int minute){
     this.restaurant = restaurant;
     this.address = address;
         this.description = description;
-        this.time =
+        time.set(year,  month, date,  hour, minute);
+        setCreator(null);
     }
+
+    public void setCreator(User creator){
+        this.creator = creator;
+    }
+
+
 }

@@ -21,6 +21,7 @@ public class User {
 
     }
 
+
     public Double getLat(){
         return lat;
     }
@@ -29,5 +30,9 @@ public class User {
         return lon;
     }
 
-
+public Event createEvent(Restaurant restaurant, String address, String description, int year, int month, int date, int hour, int minute){
+   Event event = new Event( restaurant,  address, description, year, month,  date,  hour,  minute);
+    event.setCreator(this);
+ return  event;
+}
 }
