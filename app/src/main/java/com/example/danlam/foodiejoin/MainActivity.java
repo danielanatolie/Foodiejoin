@@ -18,12 +18,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    private static Button button_create;
 
-    public static String userName="victor";
+    public static String userName="tomer";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        onClickButtonListener();
 
         Button joinButton = (Button) findViewById(R.id.joinButton);
         joinButton.setOnClickListener(new View.OnClickListener() {
@@ -34,22 +37,40 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//
+//        Button createButton = (Button) findViewById(R.id.createButton);
+//        createButton.setOnClickListener(new View.OnClickListener() {
+//            //@todo: Manipulates the views should segue to a new screen
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
-        Button createButton = (Button) findViewById(R.id.createButton);
-        createButton.setOnClickListener(new View.OnClickListener() {
-            //@todo: Manipulates the views should segue to a new screen
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        Event test = new Event("12 main", "a&w", 2017, 4,20,4,20, 20,20);
-        test.setCreator("tomer");
-        test.addPerson("victor");
-        Map<String, Event> events = new HashMap<String, Event>();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference eventsRef = database.getReference("events");
-        events.put("test event", test);
-        eventsRef.setValue(events);
+
+
+//        Event test = new Event("12 main", "a&w", 2017, 4,20,4,20, 20,20);
+//        test.setCreator("tomer");
+//        test.addPerson("victor");
+//        Map<String, Event> events = new HashMap<String, Event>();
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference eventsRef = database.getReference("events");
+//        events.put("test event", test);
+//        eventsRef.setValue(events);
+    }
+
+
+    public void onClickButtonListener() {
+        button_create = (Button) findViewById(R.id.createButton);
+        button_create.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("com.example.danlam.foodiejoin.createActivity");
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 }

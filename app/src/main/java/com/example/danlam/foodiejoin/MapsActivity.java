@@ -129,7 +129,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Event eventFromList = postSnapshot.getValue(Event.class);
                             if(eventDescription.equals(eventFromList.description)){
-                                //postSnapshot.child("users").
+                                DataSnapshot users = postSnapshot.child("users");
+                                users.child(Long.toString(users.getChildrenCount())).getRef().setValue(MainActivity.userName);
                             }
                         }
                         System.out.println("event " + events.get(0).description);
