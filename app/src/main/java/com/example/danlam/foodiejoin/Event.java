@@ -1,3 +1,7 @@
+package com.example.danlam.foodiejoin;
+
+import com.example.danlam.foodiejoin.User;
+
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,8 +19,8 @@ public class Event{
     private Calendar time;
 
     public Event(String restaurant, String address, String description, int year, int month, int date, int hour, int minute){
-    this.restaurant = restaurant;
-    this.address = address;
+        this.restaurant = restaurant;
+        this.address = address;
         this.description = description;
         time.set(year,  month, date,  hour, minute);
         setCreator(null);
@@ -26,8 +30,8 @@ public class Event{
         this.creator = creator;
     }
     public String getRestaurant(){
-    return restaurant;
-}
+        return restaurant;
+    }
 
     public String getAddress(){
         return this.address;

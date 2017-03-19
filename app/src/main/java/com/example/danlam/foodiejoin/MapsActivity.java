@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    //private User user;
+    //private com.example.danlam.foodiejoin.User user;
     private double userLat;
     private double userLon;
     //private eventLocations[];
