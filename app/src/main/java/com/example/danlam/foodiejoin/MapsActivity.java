@@ -8,7 +8,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -23,6 +22,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps1);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -32,6 +32,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        userLat = User.getLat();
+        userLon = User.getLon();
 
         // Add a marker to display the user and move the camera
         LatLng userLocation = new LatLng(userLat, userLon);
@@ -44,6 +47,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Retrieves Restaurant LatLon values from firebase, and returns it in an array
     public LatLng[] retrieveEventLocationsFromFirebase(){
         //TODO
+
+        // Event[] events = retrieveEventFromFirebase
+
         return null;
     }
 
@@ -51,8 +57,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void drawEventLocationMarkers(){
         eventLocations = retrieveEventLocationsFromFirebase();
 
-        for(LatLng latlng: eventLocations){
-            mMap.addMarker(new MarkerOptions().position(latlng));
+        for(LatLng latlngs: eventLocations){
+            mMap.addMarker(new MarkerOptions().position(latlngs));
         }
     }
 

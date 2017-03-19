@@ -23,11 +23,11 @@ public class User {
 
     }
 
-    public Double getLat(){
+    public static Double getLat(){
         return lat;
     }
 
-    public Double getLon(){
+    public static Double getLon(){
         return lon;
     }
 
