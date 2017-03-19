@@ -45,7 +45,13 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".createActivity"></activity>
+        <activity android:name=".createActivity">
+            <intent-filter>
+                <action android:name="com.example.danlam.foodiejoin.createActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
