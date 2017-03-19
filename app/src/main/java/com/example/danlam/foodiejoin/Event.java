@@ -12,16 +12,19 @@ import java.util.List;
 
 public class Event{
     User creator;
-    Restaurant restaurant;
     String address;
     String description;
     List<User> users = new LinkedList<>();
     Calendar time;
 
-    public Event(Restaurant restaurant, String address, String description, Calendar time){
-    this.restaurant = restaurant;
-    this.address = address;
+    public Event(String address, String description, int year, int month, int date, int hour, int minute{
+        this.address = address;
         this.description = description;
-        this.time =
+        time.set(year, month, date, hour, minute);
+        setCreator(null);
+    }
+
+    public void setCreator(User creater) {
+        this.creator = creater;
     }
 }
