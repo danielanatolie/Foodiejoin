@@ -11,34 +11,20 @@ import java.util.List;
  */
 
 public class Event{
-    private User creator;
-    private String restaurant;
-    private String address;
-    private String description;
-    private List<User> users = new LinkedList<>();
-    private Calendar time;
+    User creator;
+    String address;
+    String description;
+    List<User> users = new LinkedList<>();
+    Calendar time;
 
-    public Event(String restaurant, String address, String description, int year, int month, int date, int hour, int minute){
-        this.restaurant = restaurant;
+    public Event(String address, String description, int year, int month, int date, int hour, int minute{
         this.address = address;
         this.description = description;
-        time.set(year,  month, date,  hour, minute);
+        time.set(year, month, date, hour, minute);
         setCreator(null);
     }
 
-    public void setCreator(User creator){
-        this.creator = creator;
-    }
-    public String getRestaurant(){
-        return restaurant;
-    }
-
-    public String getAddress(){
-        return this.address;
-    }
-
-    public void addUser(User user){
-        users.add(user);
-
+    public void setCreator(User creater) {
+        this.creator = creater;
     }
 }
