@@ -8,11 +8,11 @@ import java.util.Calendar;
  */
 
 public class User {
-    String firstname;
-    String lastname;
-    int age;
-    Double lat;
-    Double lon;
+    private String firstname;
+    private String lastname;
+    private int age;
+    private Double lat;
+    private Double lon;
 
     public User(String first, String last, int age, double lat, double lon){
         firstname = first;
@@ -30,7 +30,7 @@ public class User {
         return lon;
     }
 
-public Event createEvent(Restaurant restaurant, String address, String description, int year, int month, int date, int hour, int minute){
+public Event createEvent(String restaurant, String address, String description, int year, int month, int date, int hour, int minute){
    Event event = new Event( restaurant,  address, description, year, month,  date,  hour,  minute);
     event.setCreator(this);
  return  event;

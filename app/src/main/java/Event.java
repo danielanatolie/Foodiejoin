@@ -7,14 +7,14 @@ import java.util.List;
  */
 
 public class Event{
-    User creator;
-    Restaurant restaurant;
-    String address;
-    String description;
-    List<User> users = new LinkedList<>();
-    Calendar time;
+    private User creator;
+    private String restaurant;
+    private String address;
+    private String description;
+    private List<User> users = new LinkedList<>();
+    private Calendar time;
 
-    public Event(Restaurant restaurant, String address, String description, int year, int month, int date, int hour, int minute){
+    public Event(String restaurant, String address, String description, int year, int month, int date, int hour, int minute){
     this.restaurant = restaurant;
     this.address = address;
         this.description = description;
@@ -25,6 +25,16 @@ public class Event{
     public void setCreator(User creator){
         this.creator = creator;
     }
+    public String getRestaurant(){
+    return restaurant;
+}
 
+    public String getAddress(){
+        return this.address;
+    }
 
+    public void addUser(User user){
+        users.add(user);
+
+    }
 }
