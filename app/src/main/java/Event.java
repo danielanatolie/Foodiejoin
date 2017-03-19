@@ -1,4 +1,5 @@
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -7,13 +8,16 @@ import java.util.List;
 
 public class Event{
     User creator;
-    String restaurant;
+    Restaurant restaurant;
     String address;
     String description;
-    List<User> users;
+    List<User> users = new LinkedList<>();
     Calendar time;
 
-    public Event(String restaurant, String address, String description, ){
-
+    public Event(Restaurant restaurant, String address, String description, Calendar time){
+    this.restaurant = restaurant;
+    this.address = address;
+        this.description = description;
+        this.time =
     }
 }

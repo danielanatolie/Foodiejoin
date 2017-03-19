@@ -21,5 +21,13 @@ public class User {
 
     }
 
+    public Double getLat(){
+        return lat;
+    }
+
+    public Double getLon(){
+        return lon;
+    }
+
 
 }
