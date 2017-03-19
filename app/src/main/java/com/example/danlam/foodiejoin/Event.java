@@ -17,7 +17,7 @@ public class Event{
     List<User> users = new LinkedList<>();
     Calendar time;
 
-    public Event(String address, String description, int year, int month, int date, int hour, int minute{
+    public Event(String address, String description, int year, int month, int date, int hour, int minute) {
         this.address = address;
         this.description = description;
         time.set(year, month, date, hour, minute);

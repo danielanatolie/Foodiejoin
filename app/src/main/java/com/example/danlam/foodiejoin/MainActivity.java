@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static Button button_create;
@@ -31,12 +32,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent("com.example.danlam.foodiejoin.createActivity");
                         startActivity(intent);
-
                     }
                 }
         );
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

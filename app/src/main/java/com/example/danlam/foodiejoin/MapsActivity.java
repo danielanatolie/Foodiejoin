@@ -33,8 +33,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        userLat = User.getLat();
-        userLon = User.getLon();
+        userLat = user.getLat();
+        userLon = user.getLon();
 
         // Add a marker to display the user and move the camera
         LatLng userLocation = new LatLng(userLat, userLon);
