@@ -1,5 +1,6 @@
 package com.example.danlam.foodiejoin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private static Button button_create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,32 +20,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
-
-        Button joinButton = (Button) findViewById(R.id.joinButton);
-        //@todo: joinButton listener
-
-        Button createButton = (Button) findViewById(R.id.createButton);
-        createButton.setOnClickListener(new View.OnClickListener() {
-            //@todo: Manipulates the views should segue to a new screen
-            @Override
-            public void onClick(View view) {
-
-
-            }
-        });
+        onClickButtonListener();
     }
+
+    public void onClickButtonListener() {
+        button_create = (Button) findViewById(R.id.createButton);
+        button_create.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("com.example.danlam.foodiejoin.createActivity");
+                        startActivity(intent);
+
+                    }
+                }
+        );
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
 }
