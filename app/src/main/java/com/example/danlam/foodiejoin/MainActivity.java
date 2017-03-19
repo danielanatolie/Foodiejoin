@@ -19,6 +19,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static String userName="victor";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Event test = new Event("12 main", "a&w", 2017, 4,20,4,20, 20,20);
+        test.setCreator("tomer");
+        test.addPerson("victor");
         Map<String, Event> events = new HashMap<String, Event>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference eventsRef = database.getReference("events");
