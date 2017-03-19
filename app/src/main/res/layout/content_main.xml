@@ -31,8 +31,8 @@
         android:text="Join"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="175dp" />
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="180dp" />
 
     <Button
         android:id="@+id/createButton"
@@ -43,6 +43,6 @@
         android:textColor="#ffffff"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="305dp" />
+        tools:layout_editor_absoluteY="321dp" />
 
 </android.support.constraint.ConstraintLayout>

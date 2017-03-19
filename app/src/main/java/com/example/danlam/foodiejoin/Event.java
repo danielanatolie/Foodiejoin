@@ -3,6 +3,7 @@ package com.example.danlam.foodiejoin;
 import com.example.danlam.foodiejoin.User;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class Event{
     String address;
     String description;
     List<User> users = new LinkedList<>();
-    Calendar time;
+    Calendar time = new GregorianCalendar();
 
-    public Event(String address, String description, int year, int month, int date, int hour, int minute{
+    public Event(String address, String description, int year, int month, int date, int hour, int minute){
         this.address = address;
         this.description = description;
         time.set(year, month, date, hour, minute);

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341162630924",
+    "firebase_url": "https://foodiejoin.firebaseio.com",
+    "project_id": "foodiejoin",
+    "storage_bucket": "foodiejoin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341162630924:android:91f68d344dc84877",
+        "android_client_info": {
+          "package_name": "com.example.danlam.foodiejoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341162630924-7hporprl1f4f5ljtqtatbfs6ft0kb9j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.danlam.foodiejoin",
+            "certificate_hash": "6565bacf4a3de9abc2be4baddb6671131818716d"
+          }
+        },
+        {
+          "client_id": "341162630924-kvh4l91vbkrphd6mi1agngjfmoh8rj0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQXTwuB4rLydv8Tqh5YRHTpEXQUibrkdw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341162630924-kvh4l91vbkrphd6mi1agngjfmoh8rj0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
