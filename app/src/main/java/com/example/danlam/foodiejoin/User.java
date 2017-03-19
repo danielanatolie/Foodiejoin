@@ -1,3 +1,5 @@
+package com.example.danlam.foodiejoin;
+
 import android.location.Location;
 import android.location.LocationListener;
 

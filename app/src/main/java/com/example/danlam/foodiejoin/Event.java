@@ -1,3 +1,7 @@
+package com.example.danlam.foodiejoin;
+
+import com.example.danlam.foodiejoin.User;
+
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
