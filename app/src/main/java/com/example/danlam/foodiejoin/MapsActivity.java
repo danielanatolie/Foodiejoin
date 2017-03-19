@@ -30,7 +30,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps1);
+        setContentView(R.layout.activity_maps);
+        //loadEvents();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -66,7 +67,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 // whenever data at this location is updated.
                 events.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    events.add(postSnapshot.getValue(Event.class));
+                    Event event = postSnapshot.getValue(Event.class);
+                    events.add(event);
+                        System.out.println("LAT " +event.lat + " long " + event.lng);
+                        LatLng latLng = new LatLng(event.lat,event.lng);
+                        mMap.addMarker(new MarkerOptions().position(latLng).title(event.description));
                 }
                 System.out.println("event " + events.get(0).description);
             }
@@ -83,10 +88,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void drawEventLocationMarkers(){
         loadEvents();
 
-        for(Event event: events){
-            LatLng latLng = new LatLng(event.lat,event.lng);
-            mMap.addMarker(new MarkerOptions().position(latLng));
-        }
     }
 
 }
